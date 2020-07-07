@@ -84,7 +84,7 @@ Example of config
 ```yaml
 paths:
   log: {cfg.traefik.log}
-name: Monitiring
+name: Monitoring
 email: {cfg.email}
 #{cfg.tls}tls: true
 #{cfg.tls}tls: true
@@ -116,7 +116,7 @@ Result
 ```yaml
 paths:
   log: ./log
-name: Monitiring
+name: Monitoring
 email: my.email@gmail.com
 tls: true
 #admin:
