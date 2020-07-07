@@ -30,7 +30,7 @@ Examaple
 
 ### 2. Run
 ```
-wget -q https://raw.githubusercontent.com/kokkekpek/configurator/master/lib/index.js index.js | docker run -t --rm --name script -v "$PWD":/usr/src/app -w /usr/src/app node:14.5-alpine node . && rm index.js
+wget -q https://raw.githubusercontent.com/kokkekpek/configurator/v1.0.0/lib/index.js index.js | docker run -t --rm --name script -v "$PWD":/usr/src/app -w /usr/src/app node:14.5-alpine node . && rm index.js
 ```
 
 ## What configurator do
