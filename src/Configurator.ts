@@ -7,6 +7,7 @@ import Templates from './utils/templates/Templates'
 import TemplatesFilter from './utils/templates/TemplatesFilter'
 import TemplatesCopy from './utils/templates/TemplatesCopy'
 import ValuesStorage from './utils/ValuesStorage'
+import Editor from './utils/Editor'
 
 export default class Configurator {
     private static readonly _JSON = 'config.json'
@@ -26,6 +27,7 @@ export default class Configurator {
             valuesStorage.addDirectories(config.directories)
             valuesStorage.addShows(config.show)
             valuesStorage.addValues(config.values)
+            Editor.edit(copiedFiles, valuesStorage.items)
         } catch (e) {
             process.exit(1)
         }
