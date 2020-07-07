@@ -19,7 +19,7 @@ const DIRECTORIES_CONFIG: DirectoriesConfigInterface = {
     }
 }
 
-it('Directories createAll', () => {
+it('createAll', () => {
     if (fs.existsSync(TEMPORARY_DIRECTORY)) rimraf.sync(TEMPORARY_DIRECTORY)
     fs.mkdirSync(TEMPORARY_DIRECTORY, { recursive: true })
 
@@ -31,7 +31,7 @@ it('Directories createAll', () => {
     expect(fs.existsSync(LOG_PATH)).toBeTruthy()
 })
 
-it('Directories paths', () => {
+it('paths', () => {
     if (fs.existsSync(TEMPORARY_DIRECTORY)) rimraf.sync(TEMPORARY_DIRECTORY)
     fs.mkdirSync(TEMPORARY_DIRECTORY, { recursive: true })
 
