@@ -5,7 +5,7 @@ import EmptyOutput from '../__override__/EmptyOutput'
 import DirectoriesConfigInterface from '../../src/config/DirectoriesConfigInterface'
 
 const rimraf = require('rimraf')
-const TEMPORARY_DIRECTORY: string = './tests/__temp__/tmp'
+const TEMPORARY_DIRECTORY: string = './tests/tmp'
 const TRAEFIK_DATA_PATH: string = TEMPORARY_DIRECTORY + '/traefik/data'
 const LOG_PATH: string = TEMPORARY_DIRECTORY + '/log'
 const DIRECTORIES_CONFIG: DirectoriesConfigInterface = {
