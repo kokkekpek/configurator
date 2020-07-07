@@ -1,5 +1,10 @@
+# Yarn
 node_modules
 yarn-error.log
 
+# Example
 example/one.yml
 example/two.yml
+
+# Temporary directory for tests. Generated automaticly
+tests/tmp
