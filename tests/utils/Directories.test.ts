@@ -24,8 +24,8 @@ it('createAll', () => {
     fs.mkdirSync(TEMPORARY_DIRECTORY, { recursive: true })
 
     const output: OutputInterface = new EmptyOutput()
-    const directories: Directories = new Directories(DIRECTORIES_CONFIG, output)
-    directories.createAll()
+    const directories: Directories = new Directories(DIRECTORIES_CONFIG)
+    directories.createAll(output)
 
     expect(fs.existsSync(TRAEFIK_DATA_PATH)).toBeTruthy()
     expect(fs.existsSync(LOG_PATH)).toBeTruthy()
@@ -35,8 +35,7 @@ it('paths', () => {
     if (fs.existsSync(TEMPORARY_DIRECTORY)) rimraf.sync(TEMPORARY_DIRECTORY)
     fs.mkdirSync(TEMPORARY_DIRECTORY, { recursive: true })
 
-    const output: OutputInterface = new EmptyOutput()
-    const directories: Directories = new Directories(DIRECTORIES_CONFIG, output)
+    const directories: Directories = new Directories(DIRECTORIES_CONFIG)
     const paths: string[] = directories.paths
     expect(paths).toStrictEqual([
         TRAEFIK_DATA_PATH,

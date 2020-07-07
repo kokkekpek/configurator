@@ -14,8 +14,9 @@ export default class Configurator {
         const output: OutputInterface = new Output()
         try {
             const config: ConfigInterface = JSONReader.read(Configurator._JSON)
-            const directories: Directories = new Directories(config.directories, output)
+            const directories: Directories = new Directories(config.directories)
             const templates: Templates = new Templates('.')
+            directories.createAll(output)
             const templatesPaths: string[] = templates.paths
             const directoriesPaths: string[] = directories.paths
             const filteredTemplatesPaths: string[] = TemplatesFilter.filter(templatesPaths, directoriesPaths)

@@ -4,20 +4,18 @@ import fs from 'fs'
 
 export default class Directories {
     private readonly _config: DirectoriesConfigInterface
-    private readonly _output: OutputInterface
 
-    public constructor(config: DirectoriesConfigInterface, output: OutputInterface) {
+    public constructor(config: DirectoriesConfigInterface) {
         this._config = config
-        this._output = output
     }
 
-    public createAll(): void {
+    public createAll(output: OutputInterface): void {
         for (const [ , value] of Object.entries(this._config)) {
             if (!fs.existsSync(value.path))
                 fs.mkdirSync(value.path, { recursive: true })
             const mask = Directories._getMask(value.permissions)
             fs.chmodSync(value.path, mask)
-            this._output.ok(`${value.path}:${value.permissions}`)
+            output.ok(`${value.path}:${value.permissions}`)
         }
     }
 
