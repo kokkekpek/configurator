@@ -73,7 +73,7 @@ Two types of placeholder
 * {cfg.name}
 * {cfg.user.email}
 
-### Comment placeholder examples
+#### Comment placeholder examples
 * \#{cfg.name}
 * //{cfg.name}
 
@@ -126,3 +126,19 @@ tls: true
 
 Configurator get data for Simple placeholders from "values" object and "directories" paths.
 For comment placeholders configurator check data in "show" object and replace to empty string if value is true.
+
+## DEV
+Install
+```sh
+yarn install
+```
+
+Build lib/index.js
+```sh
+yarn build
+```
+
+Run example. Check example directory.
+```sh
+yarn example
+```
