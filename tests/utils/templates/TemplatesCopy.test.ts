@@ -5,14 +5,14 @@ import TemplatesCopy from '../../../src/utils/templates/TemplatesCopy'
 
 const rimraf = require('rimraf')
 const copyDir = require('copy-dir')
-const CONFIG_DIRECTORY: string = './tests/__data__/config'
+const TEMPLATES_DIRECTORY: string = './tests/__data__/templates'
 const TEMPORARY_DIRECTORY: string = './tests/tmp'
 
 it('copy', () => {
     if (fs.existsSync(TEMPORARY_DIRECTORY))
         rimraf.sync(TEMPORARY_DIRECTORY)
     fs.mkdirSync(TEMPORARY_DIRECTORY, { recursive: true })
-    copyDir.sync(CONFIG_DIRECTORY, TEMPORARY_DIRECTORY)
+    copyDir.sync(TEMPLATES_DIRECTORY, TEMPORARY_DIRECTORY)
 
     const output: OutputInterface = new EmptyOutput()
     const result:string[] = TemplatesCopy.copy([
