@@ -1,2 +1,2 @@
-import Configurator from './src/Configurator'
-new Configurator()
+import Main from './src/Main'
+new Main()
