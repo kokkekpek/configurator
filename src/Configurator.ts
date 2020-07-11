@@ -29,7 +29,7 @@ export default class Configurator {
             valuesStorage.addValues(config.values)
             Editor.edit(copiedFiles, valuesStorage.items)
         } catch (e) {
-            process.exit(1)
+            output.error(e.stack)
         }
     }
 }
