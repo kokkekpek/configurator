@@ -6,7 +6,7 @@ import Templates from './utils/templates/Templates'
 import TemplatesFilter from './utils/templates/TemplatesFilter'
 import TemplatesCopy from './utils/templates/TemplatesCopy'
 import ValuesStorage from './utils/ValuesStorage'
-import Editor from './utils/Editor'
+import Replacer from './utils/Replacer'
 import ValuesConfigInterface from './config/ValuesConfigInterface'
 import ShowConfigInterface from './config/ShowConfigInterface'
 import DirectoriesConfigInterface from './config/DirectoriesConfigInterface'
@@ -29,6 +29,6 @@ export default class Configurator {
         valuesStorage.addDirectories(configDirectories)
         valuesStorage.addValues(configValues)
         valuesStorage.addShows(configShow)
-        Editor.edit(copiedFiles, valuesStorage.items, output)
+        Replacer.replace(copiedFiles, valuesStorage.items, output)
     }
 }

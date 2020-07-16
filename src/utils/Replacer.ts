@@ -2,8 +2,8 @@ import ValuesConfigInterface from '../config/ValuesConfigInterface'
 import fs from 'fs'
 import OutputInterface from './output/OutputInterface'
 
-export default class Editor {
-    public static edit(files: string[], values: ValuesConfigInterface, output: OutputInterface): void {
+export default class Replacer {
+    public static replace(files: string[], values: ValuesConfigInterface, output: OutputInterface): void {
         for (let i: number = 0; i < files.length; i++) {
             const file: string = files[i]
             output.created(file)
