@@ -25,8 +25,12 @@ export default class ValuesStorage {
         for (const [key, value] of Object.entries(show)) {
             const sharp: string = `${ValuesStorage._SHARP_COMMENT}{${ValuesStorage._CFG}.${key}}`
             const slash: string = `${ValuesStorage._SLASH_COMMENT}{${ValuesStorage._CFG}.${key}}`
+            const noSharp: string = `${ValuesStorage._SHARP_COMMENT}{!${ValuesStorage._CFG}.${key}}`
+            const noSlash: string = `${ValuesStorage._SLASH_COMMENT}{!${ValuesStorage._CFG}.${key}}`
             this._items[sharp] = value ? '' : ValuesStorage._SHARP_COMMENT
             this._items[slash] = value ? '' : ValuesStorage._SLASH_COMMENT
+            this._items[noSharp] = value ? ValuesStorage._SHARP_COMMENT : ''
+            this._items[noSlash] = value ? ValuesStorage._SLASH_COMMENT : ''
         }
     }
 

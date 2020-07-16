@@ -21,8 +21,12 @@ it('addShows', () => {
     expect(valuesStorage.items).toStrictEqual({
         '#{cfg.tls}': '',
         '//{cfg.tls}': '',
+        '#{!cfg.tls}': '#',
+        '//{!cfg.tls}': '//',
         '#{cfg.log}': '#',
-        '//{cfg.log}': '//'
+        '//{cfg.log}': '//',
+        '#{!cfg.log}': '',
+        '//{!cfg.log}': '',
     })
 })
 
@@ -69,8 +73,12 @@ it('combine', () => {
         '{cfg.email}': 'my.email@gmail.com',
         '#{cfg.tls}': '',
         '//{cfg.tls}': '',
+        '#{!cfg.tls}': '#',
+        '//{!cfg.tls}': '//',
         '#{cfg.log}': '#',
         '//{cfg.log}': '//',
+        '#{!cfg.log}': '',
+        '//{!cfg.log}': '',
         '{cfg.traefik.acme}': './data/traefik/acme',
         '{cfg.traefik.log}': './log'
     })

@@ -30,7 +30,7 @@ Example
 
 ### 2. Run
 ```
-wget -q https://raw.githubusercontent.com/kokkekpek/configurator/v1.0.1/lib/index.js index.js | docker run -t --rm --name script -v "$PWD":/usr/src/app -w /usr/src/app node:14.5-alpine node . && rm index.js
+wget -q https://raw.githubusercontent.com/kokkekpek/configurator/v1.1.0/lib/index.js index.js | docker run -t --rm --name script -v "$PWD":/usr/src/app -w /usr/src/app node:14.5-alpine node . && rm index.js
 ```
 
 ## What configurator do
@@ -86,8 +86,8 @@ paths:
   log: {cfg.traefik.log}
 name: Monitoring
 email: {cfg.email}
-#{cfg.tls}tls: true
-#{cfg.tls}tls: true
+#{cfg.production}production: xxx
+#{!cfg.production}development: xxx
 #{cfg.admin}admin:
 #{cfg.admin}  name: root
 #{cfg.admin}  password: 12345
@@ -106,7 +106,7 @@ config.json
     "email": "my.email@gmail.com"
   },
   "show": {
-    "tls": true,
+    "production": true,
     "admin": false
   }
 }
@@ -118,7 +118,8 @@ paths:
   log: ./log
 name: Monitoring
 email: my.email@gmail.com
-tls: true
+production: xxx
+#development: xxx
 #admin:
 #  name: root
 #  password: 12345
