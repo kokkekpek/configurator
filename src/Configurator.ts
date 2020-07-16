@@ -24,11 +24,11 @@ export default class Configurator {
         const templatesPaths: string[] = templates.paths
         const directoriesPaths: string[] = directories.paths
         const filteredTemplatesPaths: string[] = TemplatesFilter.filter(templatesPaths, directoriesPaths)
-        const copiedFiles: string[] = TemplatesCopy.copy(filteredTemplatesPaths, output)
+        const copiedFiles: string[] = TemplatesCopy.copy(filteredTemplatesPaths)
         const valuesStorage: ValuesStorage = new ValuesStorage()
         valuesStorage.addDirectories(configDirectories)
         valuesStorage.addValues(configValues)
         valuesStorage.addShows(configShow)
-        Editor.edit(copiedFiles, valuesStorage.items)
+        Editor.edit(copiedFiles, valuesStorage.items, output)
     }
 }

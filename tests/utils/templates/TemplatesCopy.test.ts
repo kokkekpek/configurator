@@ -1,6 +1,4 @@
 import fs from 'fs'
-import OutputInterface from '../../../src/utils/output/OutputInterface'
-import EmptyOutput from '../../__override__/EmptyOutput'
 import TemplatesCopy from '../../../src/utils/templates/TemplatesCopy'
 
 const rimraf = require('rimraf')
@@ -14,12 +12,11 @@ it('copy', () => {
     fs.mkdirSync(TEMPORARY_DIRECTORY, { recursive: true })
     copyDir.sync(TEMPLATES_DIRECTORY, TEMPORARY_DIRECTORY)
 
-    const output: OutputInterface = new EmptyOutput()
     const result:string[] = TemplatesCopy.copy([
         './tests/tmp/log/three.template.yml',
         './tests/tmp/one.template.yml',
         './tests/tmp/subdirectory/two.template.yml'
-    ],output)
+    ])
 
     expect(result).toStrictEqual([
         './tests/tmp/log/three.yml',
