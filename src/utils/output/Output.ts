@@ -6,7 +6,12 @@ export default class Output implements OutputInterface {
     private static readonly _ERROR = '[ERROR]'
     private static readonly _OK = '[OK]'
 
-    public ok(message: string): void {
+    public created(message: string): void {
+        const ok: string = green(Output._OK)
+        console.log(`${ok} ${message}`)
+    }
+
+    public replaced(message: string): void {
         const ok: string = green(Output._OK)
         console.log(`${ok} ${message}`)
     }

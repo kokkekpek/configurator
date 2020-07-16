@@ -1,4 +1,5 @@
 export default interface OutputInterface {
-    ok(message: string): void
+    created(message: string): void
+    replaced(message: string): void
     error(message: string): void
 }
