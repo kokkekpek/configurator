@@ -1,19 +1,20 @@
-import {green} from 'colors/safe'
-import {red} from 'colors/safe'
+import {green, magenta, white, red} from 'colors/safe'
 import OutputInterface from './OutputInterface'
+import path from "path";
 
 export default class Output implements OutputInterface {
     private static readonly _ERROR = '[ERROR]'
-    private static readonly _OK = '[OK]'
 
-    public created(message: string): void {
-        const ok: string = green(Output._OK)
-        console.log(`${ok} ${message}`)
+    public created(file: string): void {
+        const filePath = path.resolve('.', file)
+        const coloredFilePath: string = green(filePath)
+        console.log(`${coloredFilePath}`)
     }
 
-    public replaced(message: string): void {
-        const ok: string = green(Output._OK)
-        console.log(`${ok} ${message}`)
+    public replaced(key: string, value: string): void {
+        const coloredKey: string = magenta(key)
+        const coloredValue: string = white(value)
+        console.log(`  ${coloredKey}: ${coloredValue}`)
     }
 
     public error(message: string): void {

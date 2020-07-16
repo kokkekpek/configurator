@@ -13,7 +13,7 @@ export default class Editor {
             for (const [key, value] of Object.entries(values)) {
                 if (fileText.indexOf(key) !== -1) {
                     fileText = fileText.split(key).join(value)
-                    output.replaced(`  ${key}: ${value}`)
+                    output.replaced(key, value)
                 }
             }
             fs.writeFileSync(file, fileText)

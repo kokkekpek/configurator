@@ -15,7 +15,7 @@ export default class Directories {
                 fs.mkdirSync(value.path, { recursive: true })
             const mask = Directories._getMask(value.permissions)
             fs.chmodSync(value.path, mask)
-            output.created(`${value.path}:${value.permissions}`)
+            output.created(value.path)
         }
     }
 
