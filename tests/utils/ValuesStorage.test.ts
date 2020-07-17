@@ -4,21 +4,13 @@ it('addValues', () => {
     const valuesStorage: ValuesStorage = new ValuesStorage()
     valuesStorage.addValues({
         name: 'Name',
-        email: 'my.email@gmail.com'
-    })
-    expect(valuesStorage.items).toStrictEqual({
-        '{cfg.name}': 'Name',
-        '{cfg.email}': 'my.email@gmail.com'
-    })
-})
-
-it('addShows', () => {
-    const valuesStorage: ValuesStorage = new ValuesStorage()
-    valuesStorage.addShows({
+        email: 'my.email@gmail.com',
         tls: true,
         log: false
     })
     expect(valuesStorage.items).toStrictEqual({
+        '{cfg.name}': 'Name',
+        '{cfg.email}': 'my.email@gmail.com',
         '#{cfg.tls}': '',
         '//{cfg.tls}': '',
         '#{!cfg.tls}': '#',
@@ -52,9 +44,7 @@ it('combine', () => {
     const valuesStorage: ValuesStorage = new ValuesStorage()
     valuesStorage.addValues({
         name: 'Name',
-        email: 'my.email@gmail.com'
-    })
-    valuesStorage.addShows({
+        email: 'my.email@gmail.com',
         tls: true,
         log: false
     })

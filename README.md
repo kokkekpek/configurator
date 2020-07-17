@@ -20,9 +20,7 @@ Example
     }
   },
   "values": {
-    "email": "my.email@gmail.com"
-  },
-  "show": {
+    "email": "my.email@gmail.com",
     "tls": true
   }
 }
@@ -67,7 +65,7 @@ Examples:
 ### 4. Search placeholders.
 Two types of placeholder
 * Simple
-* Comment \# or //
+* Comment started from "\#" or "//"
 
 #### Simple placeholder examples
 * {cfg.name}
@@ -79,7 +77,7 @@ Two types of placeholder
 
 All placeholder contains **cfg.**
 
-### 5. Replace placeholders.
+### 5. Replace placeholders
 Example of config
 ```yaml
 paths:
@@ -103,9 +101,7 @@ config.json
     }
   },
   "values": {
-    "email": "my.email@gmail.com"
-  },
-  "show": {
+    "email": "my.email@gmail.com",
     "production": true,
     "admin": false
   }
@@ -125,8 +121,8 @@ production: xxx
 #  password: 12345
 ```
 
-Configurator get data for Simple placeholders from "values" object and "directories" paths.
-For comment placeholders configurator check data in "show" object and replace to empty string if value is true.
+Configurator get data for **Simple placeholders** from "values" and "directories" paths.
+For **Comment placeholders** configurator search boolean in "values". Replace to empty string if value is true and place comment symbols if value is false.
 
 ## DEV
 Install

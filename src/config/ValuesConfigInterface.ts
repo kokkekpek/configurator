@@ -1,3 +1,3 @@
 export default interface ValuesConfigInterface {
-    [key: string]: string
+    [key: string]: string | number | boolean
 }

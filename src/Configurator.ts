@@ -8,7 +8,6 @@ import TemplatesCopy from './utils/templates/TemplatesCopy'
 import ValuesStorage from './utils/ValuesStorage'
 import Replacer from './utils/Replacer'
 import ValuesConfigInterface from './config/ValuesConfigInterface'
-import ShowConfigInterface from './config/ShowConfigInterface'
 import DirectoriesConfigInterface from './config/DirectoriesConfigInterface'
 
 export default class Configurator {
@@ -16,7 +15,6 @@ export default class Configurator {
         const config: ConfigInterface = JSONReader.read(configJsonFile)
         const configDirectories: DirectoriesConfigInterface = config.directories ?? {}
         const configValues: ValuesConfigInterface = config.values ?? {}
-        const configShow: ShowConfigInterface = config.show ?? {}
 
         const directories: Directories = new Directories(configDirectories)
         const templates: Templates = new Templates(rootPath)
@@ -28,7 +26,6 @@ export default class Configurator {
         const valuesStorage: ValuesStorage = new ValuesStorage()
         valuesStorage.addDirectories(configDirectories)
         valuesStorage.addValues(configValues)
-        valuesStorage.addShows(configShow)
         Replacer.replace(copiedFiles, valuesStorage.items, output)
     }
 }

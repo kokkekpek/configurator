@@ -10,9 +10,7 @@
     }
   },
   "values": {
-    "email": "my.email@gmail.com"
-  },
-  "show": {
+    "email": "my.email@gmail.com",
     "tls": true
   }
 }

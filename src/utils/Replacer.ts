@@ -1,9 +1,9 @@
-import ValuesConfigInterface from '../config/ValuesConfigInterface'
 import fs from 'fs'
 import OutputInterface from './output/OutputInterface'
+import ObjectStringInterface from './interface/ObjectStringInterface'
 
 export default class Replacer {
-    public static replace(files: string[], values: ValuesConfigInterface, output: OutputInterface): void {
+    public static replace(files: string[], values: ObjectStringInterface, output: OutputInterface): void {
         for (let i: number = 0; i < files.length; i++) {
             const file: string = files[i]
             output.created(file)
