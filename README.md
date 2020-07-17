@@ -12,11 +12,11 @@ Example
   "directories": {
     "traefik.acme": {
       "path": "./data/traefik/acme",
-      "permissions": 775
+      "permissions": 755
     },
     "traefik.log": {
       "path": "./log",
-      "permissions": 775
+      "permissions": 755
     }
   },
   "values": {
@@ -39,11 +39,11 @@ Config example
   "directories": {
     "traefik.acme": {
       "path": "./data/traefik/acme",
-      "permissions": 775
+      "permissions": 755
     },
     "traefik.log": {
       "path": "./log",
-      "permissions": 775
+      "permissions": 755
     }
   }
 }
@@ -97,7 +97,7 @@ config.json
   "directories": {
     "traefik.log": {
       "path": "./log",
-      "permissions": 775
+      "permissions": 755
     }
   },
   "values": {

@@ -28,7 +28,7 @@ export default class Directories {
 
     /**
      * @param permission {number} Example:
-     *     775
+     *     755
      * @return {number} Example:
      *     493
      */

@@ -27,11 +27,11 @@ it('addDirectories', () => {
     valuesStorage.addDirectories({
         'traefik.acme': {
             path: './data/traefik/acme',
-            permissions: 775
+            permissions: 755
         },
         'traefik.log': {
             path: './log',
-            permissions: 775
+            permissions: 755
         }
     })
     expect(valuesStorage.items).toStrictEqual({
@@ -51,11 +51,11 @@ it('combine', () => {
     valuesStorage.addDirectories({
         'traefik.acme': {
             path: './data/traefik/acme',
-            permissions: 775
+            permissions: 755
         },
         'traefik.log': {
             path: './log',
-            permissions: 775
+            permissions: 755
         }
     })
     expect(valuesStorage.items).toStrictEqual({

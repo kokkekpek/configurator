@@ -11,11 +11,11 @@ const LOG_PATH: string = TEMPORARY_DIRECTORY + '/log'
 const DIRECTORIES_CONFIG: DirectoriesConfigInterface = {
     'traefik.data': {
         path: TRAEFIK_DATA_PATH,
-        permissions: 775
+        permissions: 755
     },
     'log': {
         path: LOG_PATH,
-        permissions: 775
+        permissions: 755
     }
 }
 
