@@ -67,18 +67,18 @@ Two types of placeholder
 * Simple
 * Comment started from "\#" or "//"
 
-#### Simple placeholder examples
+#### Simple placeholders
 * {cfg.name}
 * {cfg.user.email}
 
-#### Comment placeholder examples
+#### Comment placeholders
 * \#{cfg.name}
 * //{cfg.name}
 
-All placeholder contains **cfg.**
+All placeholder start with **cfg.**
 
 ### 5. Replace placeholders
-Example of config
+Example of yaml config
 ```yaml
 paths:
   log: {cfg.traefik.log}
