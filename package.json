@@ -1,6 +1,6 @@
 {
   "name": "configurator",
-  "version": "1.0.0",
+  "version": "1.2.1",
   "description": "Create directories and replace values in configs",
   "main": "lib/index.js",
   "repository": "https://github.org/kokkekpek/configurator",
