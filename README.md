@@ -135,6 +135,11 @@ Build lib/index.js
 yarn build
 ```
 
+Tests
+```sh
+yarn test
+```
+
 Run example. Check example directory.
 ```sh
 yarn example
